@@ -45,7 +45,7 @@ Goal: y_hat needs to ressemble y as close as possible
 Are the building blocks of neural networks. They allow the computer to convert the bounday equation into a useful graph.
 We must create a node that consists of data and the boundary line that seperates them. Next, we create input nodes that allow the perceptron to recieve new data, plot the points and check if the points lie in the positve region of the boundary line. 
 
-
+![What is this](perceptron_img.png)
 
 
 
