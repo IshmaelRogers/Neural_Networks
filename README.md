@@ -26,7 +26,7 @@ Question? How to find the line that seperates the data
 
 ## Linear boundaries
 
-w1 + x1 + w2 + x2 + b = 0
+w1x1 + w2x2 + b = 0
 Wx + b = 0 
 W = (w1, w2)
 x = (x1, x2)
@@ -42,13 +42,21 @@ Goal: y_hat needs to ressemble y as close as possible
 
 ### Perceptrons 
 
-Are the building blocks of neural networks. They allow the computer to convert the bounday equation into a useful graph.
+Are the building blocks of neural networks. They allow the computer to convert the boundary equation into a useful graph.
 We must create a node that consists of data and the boundary line that seperates them. Next, we create input nodes that allow the perceptron to recieve new data, plot the points and check if the points lie in the positve region of the boundary line. 
 
 ![What is this](perceptron_img.png)
 
+The score is the way that define our criteria for selection. For example:
 
-
+Consider a case in cyber security monitoring where we have designed a system that checks for one particular anamoly. In this case, our system checks for two criteria. The amount of requests the firewall is taking (n_firewall_Requests) and the performance of the system (sys_health) . A linear equation is created in order to assigned each anomoly a score. 
+        Score = 3 * sys_health + 2 * grades - 9
+        ## Prediction:
+        Score >= 0 Threat
+        Score >= 0 Non-threat 
+        
+        
+        
 
 
 
