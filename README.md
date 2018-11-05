@@ -4,6 +4,10 @@
 
 Given some data the neural network draws a line that best seperates the points. 
 
+Look like neurons in the brain
+
+Calculates some equation on some input and calculates whether or not to output 1 or 0
+
 ### Classification problems
 
 student 1
@@ -60,14 +64,85 @@ Step function
 returns 1 i
         
 
+### Logical operators 
+
+AND - follow stardard "and" logic 
+OR 
+XOR 
+
+In order to implement perceptrons as logical operators, take the desired truth table (AND, OR, XOR, etc.) use the perceptrons to plot the the data and seperate the positive from the negative region. 
+
+### TODO find the weights and bias to create the perceptrons as logical operators. 
+
+There are two ways to go from an AND perceptron to an OR perceptron 
+
+1. Increase the weight 
+2. Decrease the magnitude of the bias 
 
 
+### The perceptron Trick 
+
+Logical operators (using perceptrons) should not be built by the human operator. Instead they should build themselves given some results. 
+
+The following defines the base line for the perceptron algorithm. 
+
+Given some data a perceptron will find a line and then pick a random linear equation. Next the perceptron will look at how bad the line is doing and move the line around until it gets better. To do this we need "ask" the points to move the line, either closer or farther, in order to correctly classify them correctly.
 
 
+## Make a line move closer to a point 
 
+Given some linear equation we define a line: 
 
+nx1 + mx2 - b = 0
 
+Plot the bounday line to get a positive and negative region 
 
+We generalize to a misclassified point 
+
+(x,y)
+
+Let's discuss a way to make the bounday line come closer to the points. 
+
+We use a learning rate to allow the line to make small steps towards the point without moving too drastically and potenitally misclassifying other points. 
+
+Multiply learning rate Lr to the misclassified point's coordinates and then perform an operation depending on where the point resides using our equation of a line to give us a new line. 
+
+## The point is misclassifed in the posive region (i.e the point belongs in the negative region) 
+
+We subtract
+   n       m     -b
+-  x(Lr) y(Lr) 1(Lr)
+____________________
+
+New line 
+(n-x(Lr))X1 + (m-y(Lr))X2 + (-b - 1(Lr))= 0 
+
+## The pointt is misclassified in the negative region (i.e the point belongs in the positive region)
+
+We add
+
+   n       m     -b
++  x(Lr) y(Lr) 1(Lr)
+____________________
+
+New Line 
+(n + x(Lr))X1 + (m + y(Lr))X2 + (-b + 1(Lr))= 0 
+
+Psuedocode: Repeat the following algorithm until we get no errors or we reach a disired number of iterations
+
+1. Start with some random weights and bias W1...Wn, b
+2. for every misclassified point (x1,...,xn)
+        if the prediction = 0:
+                for i= 1...n
+                        change weight Wi + Lr(xi)
+                        change bias b = Lr
+        if the prediction = 1:
+                for i= 1...n
+                        change weight  Wi - Lr(xi)
+                        change basis  b + Lr
+                        
+  
+                        
 
 ### Introduction
 
