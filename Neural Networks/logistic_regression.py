@@ -2,12 +2,16 @@ import numpy as np
 
 np.random.seed(42)
 
-def sigmoid(x):
-	return 1/(1+np.exp(-x))
+def sigmoid(scores):
+	return 1/(1+np.exp(-scores))
 
 def sigmoid_prime(x):
 	return sigmoird(x)*(1-sigmoid(x))
 
+def log_likelihood(features, target, weights):
+    scores = np.dot(features, weights)
+    ll = np.sum( target*scores - np.log(1 + np.exp(scores)) )
+    return ll
 def prediction(X, W, b):
 	return signmoid(np.matmul(X, W)+b)
 
