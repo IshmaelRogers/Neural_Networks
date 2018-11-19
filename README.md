@@ -105,8 +105,8 @@ The following defines the baseline for the perceptron algorithm.
 Given some data a perceptron will find a line and then pick a random linear equation. Next the perceptron will look at how bad the line is doing and move the line around until it gets better. To do this we need to "ask" the points to move the line, either closer or farther, in order to correctly classify them correctly.
 
 
-## Make a line move closer to a point 
-
+Make a line move closer to a point 
+---
 Given some linear equation we define a line: 
 
 nx1 + mx2 - b = 0
@@ -117,15 +117,16 @@ We generalize to a misclassified point
 
 (x,y)
 
-## Let's discuss a way to make the bounday line come closer to the points. 
+Let's discuss a way to make the bounday line come closer to the points. 
 
-## Learning rate Lr
+Learning rate Lr
+---
 
 We use a learning rate to allow the line to make small steps towards the point without moving too drastically and potenitally misclassifying other points. 
 
 Multiply learning rate Lr to the misclassified point's coordinates and then perform an operation depending on where the point resides using our equation of a line to give us a new line. 
 
-## The point is misclassifed in the posive region (i.e the point belongs in the negative region) 
+The point is misclassifed in the posive region (i.e the point belongs in the negative region) 
 
 We subtract
    n       m     -b
